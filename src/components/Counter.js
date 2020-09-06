@@ -17,11 +17,21 @@ The other things can simply be _derived_ from the count itself.
 
 STEP 0:
   Start by studying the component below, and importing the state hook.
+*/ 
 
+import React, { useState } from 'react';
+
+/*
 STEP 1:
   Using the state hook, create a 'count', 'setCount' pair.
   The 'count' state should be initialized to the number zero.
+*/ 
 
+export default function Counter() {
+  const initialState = 10;
+  const [count, setCount] = useState(initialState);
+
+/*
 STEP 2:
   The 'style' object has the 'color' property hard-coded to "royalblue".
   What the value of 'color' should be instead is a ternary expression that goes like this:
@@ -46,37 +56,42 @@ STEP 6:
   This click handler needs to use 'setCount' to set the 'count' to be zero again.
 */
 
-import React from 'react'; /* STEP 0 */
+/* STEP 0 */
 
-export default function Counter() {
-  /* STEP 1 */
+ /* STEP 1 */
 
+   /* STEP 4 */
   const increment = () => {
-    /* STEP 4 */
-  };
-  const decrement = () => {
-    /* STEP 5 */
-  };
-  const reset = () => {
-    /* STEP 6 */
+    setCount(count +1)
   };
 
+   /* STEP 5 */
+  const decrement = () => {
+    setCount(count -1)
+  };
+
+    /* STEP 6 */
+  const reset = () => {
+    setCount(initialState)
+  };
+
+  /* STEP 2 */
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: 'royalblue', /* STEP 2 */
+    color: (count % 2 == 1)
+    ? "crimson" 
+    : "royalBlue",color: 'royalblue', 
   };
 
   return (
     <div className='widget-counter container'>
       <h2>Counter</h2>
-      <div id='count' style={style}>
-        Number 0 is even {/* STEP 3 */}
-      </div>
+      <div style={style}>Number {count} is {(count % 2 == 0) ? "even" : "odd"}</div> {/* STEP 3 */}
       <div>
-        <button id='increment' onClick={increment}>Increment</button>
-        <button id='decrement' onClick={decrement}>Decrement</button>
-        <button id='resetCount' onClick={reset}>Reset</button>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+
       </div>
     </div>
   );
