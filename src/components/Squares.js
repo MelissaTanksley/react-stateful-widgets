@@ -14,7 +14,10 @@ Only one square (or none) can be active at any given point.
 Find comments below to help you along.
 */
 
-import React from 'react';
+import React, { useState } from 'react';
+const [squares, setSquares] = useState(listOfSquareIds)
+const [activeSquare, setActiveSquare] = useState()
+
 
 // Use this variable ONLY to initialize a slice of state!
 const listOfSquareIds = ['sqA', 'sqB', 'sqC', 'sqD'];
@@ -38,7 +41,14 @@ export default function Squares() {
     // Set the id argument to become the active id in state
     // (unless it already is, in which case we should reset
     // the currently active square id back to initial state).
+    (activeSquare === id)
+    ? setActiveSquare(null)
+    : setActiveSquare(id)
   };
+
+  return (
+    <div className='widget-squares container'>
+      <h2>Squares</h2>
 
   return (
     <div className='widget-squares container'>
@@ -48,17 +58,29 @@ export default function Squares() {
           // Nasty bug! We should map over a slice of state, instead of 'listOfSquareIds'.
           // We might say: "it works, though!" But if the list of squares is not state,
           // we could never add squares, change squares or remove squares in the future. Fix!
-          listOfSquareIds.map(id =>
+          squares.map(id =>
             <div
               id={id}
               key={id}
-              className={`square${getClassName(id)}`}
+              className={`square${isActive(id)}`}
+              className={`square ${isActive(id)}`}
               onClick={() => markActive(id)}
             >
             </div>
+
           )
         }
       </div>
     </div>
   );
 }
+
+
+
+
+</div>const isActive = id => {
+  return activeSquare === id
+    ? "active"
+    : ""
+
+  }; 
