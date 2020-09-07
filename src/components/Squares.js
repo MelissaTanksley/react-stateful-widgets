@@ -15,6 +15,7 @@ Find comments below to help you along.
 */
 
 import React, { useState } from 'react';
+
 const [squares, setSquares] = useState(listOfSquareIds)
 const [activeSquare, setActiveSquare] = useState()
 
@@ -54,27 +55,28 @@ export default function Squares() {
 
   return (
     <div className='widget-squares container'>
-      <h2>Squares</h2>
-
+      <h2>Squares</h2></div>
+  )
   return (
-    <div className='widget-squares container'>
+    <div className='widget-squares container'></div>
       <h2>Squares</h2>
-      <div className='squares'>
-        {
+      <div className='squares'></div>
+  )     
           // Nasty bug! We should map over a slice of state, instead of 'listOfSquareIds'.
           // We might say: "it works, though!" But if the list of squares is not state,
           // we could never add squares, change squares or remove squares in the future. Fix!
+
+
           squares.map(id =>
             <div
               id={id}
               key={id}
               className={`square${isActive(id)}`}
               className={`square ${isActive(id)}`}
-              onClick={() => markActive(id)}
-            >
+              onClick={() => markActive(id)}>
             </div>
-
-        }    
-  }       
+          )
+          
+        
       
-
+}

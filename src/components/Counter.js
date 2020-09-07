@@ -19,7 +19,6 @@ STEP 0:
   Start by studying the component below, and importing the state hook.
 */ 
 
-import React, { useState } from 'react';
 
 /*
 STEP 1:
@@ -27,9 +26,7 @@ STEP 1:
   The 'count' state should be initialized to the number zero.
 */ 
 
-export default function Counter() {
-  const initialState = 10;
-  const [count, setCount] = useState(initialState);
+
 
 /*
 STEP 2:
@@ -57,9 +54,14 @@ STEP 6:
   This click handler needs to use 'setCount' to set the 'count' to be zero again.
 */
 
-/* STEP 0 */
+/* STEP 0 */ 
+import React, { useState } from 'react';
+
 
  /* STEP 1 */
+export default function Counter() {
+  const [count, setCount] = useState(0);
+
 
    /* STEP 4 */
   const increment = () => {
@@ -88,11 +90,11 @@ STEP 6:
   return (
     <div className='widget-counter container'>
       <h2>Counter</h2>
-      <div style={style}>Number {count} is {(count % 2 == 0) ? "even" : "odd"}</div> {/* STEP 3 */}
+      <div style={style}>Number {count} is {(count % 2 === 0) ? "even" : "odd"}</div> {/* STEP 3 */}
       <div>
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
-
+        <button onClick={reset}>Reset</button>
       </div>
     </div>
   );

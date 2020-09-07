@@ -50,17 +50,12 @@ export default function Input() {
     /* STEP 4 */
   };
 
-
-  
-  const reset = () => {
-    setInputValue("")
     /* STEP 5 */
-  };
+ 
 
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: 'royalblue', /* STEP 2 */
     textTransform: 'uppercase',
     color: (inputValue.length > 10)
      ? 'crimson'
@@ -78,7 +73,7 @@ export default function Input() {
       
      
       {/* STEP 6 */}
-        <button id='resetInput' onClick={reset}>Reset</button>
+      <button onClick={reset}>Reset</button>
       </div>
     </div>
   );

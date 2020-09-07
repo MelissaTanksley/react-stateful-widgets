@@ -47,8 +47,8 @@ const [spinnerOn, setSpinnerOn] = useState(true)
   const toggleSpinner = () => {
   /* STEP 4 */
     (spinnerOn === true),
-    ? setSpinnerOn(false),
-    : setSpinnerOn(true);
+    x = setSpinnerOn(false),
+    y = setSpinnerOn(true);
   };
 
   return (
