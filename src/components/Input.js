@@ -37,18 +37,15 @@ STEP 6:
 import React, { useState } from 'react'; /* STEP 0 */
 
 export default function Input() {
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState([])
   /* STEP 1 */
 
-  const { value } = evt.target;
+  //const { value } = evt.target;
 
-    setInputValue(value)
-    /* STEP 4 */
-  };
   const reset = () => {
     setInputValue("")
     /* STEP 4 */
-  };
+  }
 
     /* STEP 5 */
  
@@ -69,7 +66,7 @@ export default function Input() {
 
 
       <div>
-      <input type='text' value={inputValue} onChange={changeInput}/> 
+      <input type='text' value={inputValue}/> 
       {/* STEP 6 */}
       
       <button onClick={reset}>Reset</button>
@@ -77,8 +74,8 @@ export default function Input() {
     </div>
   );
 
-
+  
 
 ///////
 
-
+}

@@ -16,10 +16,6 @@ Find comments below to help you along.
 
 import React, { useState } from 'react';
 
-const [squares, setSquares] = useState(listOfSquareIds)
-const [activeSquare, setActiveSquare] = useState()
-
-
 // Use this variable ONLY to initialize a slice of state!
 const listOfSquareIds = ['sqA', 'sqB', 'sqC', 'sqD'];
 
@@ -57,11 +53,6 @@ export default function Squares() {
     <div className='widget-squares container'>
       <h2>Squares</h2></div>
   )
-  return (
-    <div className='widget-squares container'></div>
-      <h2>Squares</h2>
-      <div className='squares'></div>
-  )  
     
           // Nasty bug! We should map over a slice of state, instead of 'listOfSquareIds'.
           // We might say: "it works, though!" But if the list of squares is not state,
